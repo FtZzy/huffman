@@ -27,7 +27,12 @@ if __name__ == '__main__':
         }
         choices.get(arg)(sys.argv[2])
     except IndexError as e:
-        print("You need to give a correct argument and a filename, %s! See the documentation:" % e)
+        print("You need to give an argument and a filename, %s!\
+               See the documentation:" % e)
+        display_doc()
+    except TypeError as e:
+        print("You need to give a correct argument('-c' or '-d'), % s!\
+               See the documentation: " % e)
         display_doc()
     else:
-        print("Finished.")
+        print("Done.")
