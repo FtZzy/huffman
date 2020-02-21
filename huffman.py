@@ -21,18 +21,16 @@ if __name__ == '__main__':
     """Huffman algorithm."""
     try:
         arg = sys.argv[1]
-        choices = {
-            '-c': compress,
-            '-d': decompress
-        }
-        choices.get(arg)(sys.argv[2])
+        file_path = sys.argv[2]
     except IndexError as e:
-        print("You need to give an argument and a filename, %s!\
-               See the documentation:" % e)
-        display_doc()
-    except TypeError as e:
-        print("You need to give a correct argument('-c' or '-d'), % s!\
-               See the documentation: " % e)
+        print("You need to give an argument and a filename!\n" % e)
+        print("See the documentation:")
         display_doc()
     else:
-        print("Done.")
+        choices = {
+            '-c': compress,
+            '-d': decompress,
+        }
+        choices.get(arg, display_doc)(file_path)
+    finally:
+        print("Program finished.")
