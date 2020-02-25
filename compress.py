@@ -115,7 +115,7 @@ def create_translator(occ_dict):
     return result
 
 
-def create_compressed_file(text, translator, compressed_filename="compressed.bin"):
+def create_compressed_file(text, translator, compressed_filename="my_file.bin"):
     """Create the compressed file (filename.bin).
 
     :text: str, ascii string to compress
