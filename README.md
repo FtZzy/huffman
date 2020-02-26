@@ -15,16 +15,21 @@ It not the most optimized or effective program but it works. Moreover it is simp
 ## How use it?
 
 First you have to download the repository.
-```$ git clone https://github.com/FtZzy/huffman.git
+```bash
+ftz@zy:~/huffman$ git clone https://github.com/FtZzy/huffman.git
 ```
 
 To compress the ascii file 'my_file.txt', use the `-c` argument. The result will be saved as 'my_file.bin'.
-```$ python main.py -c <my_file.txt>
+```bash
+ftz@zy:~/huffman$ python main.py -c <my_file.txt>
 ```
 
-Finally, you can decompress 'my_file.bin' with `-d`. The result will be saved as 'decompressed_my_file.txt'. (TODO)
-```$ python main.py -d <my_file.bin>
+Finally, you can decompress 'my_file.bin' with `-d`. The result will be saved as 'my_decompressed_file.txt'.
+```bash
+ftz@zy:~/huffman$ python main.py -d <my_file.bin>
 ```
+
+You can compare the decompressed result and initial file with the bash command `diff <my_file.txt> <my_decompressed_file.txt>`.
 
 
 ## TODO
