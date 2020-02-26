@@ -84,7 +84,7 @@ def get_rarest_node(dictionary):
 def update_translator(dictionary, liste, binary=0):
     """Update the translator dictionary for a list of string.
 
-    :dictionary: dict, the translator dictionary
+    :dictionary: Dict[char:str], the translator dictionary
     :liste: str, the liste of character to update
     :binary: int, value to add for update (0 or 1)
     """
@@ -98,8 +98,8 @@ def update_translator(dictionary, liste, binary=0):
 def create_translator(occ_dict):
     """Create the translator dict.
 
-    :occ_dict: dict, occurence of ascii character
-    :returns: dict, the translator dictionary ascii to binary
+    :occ_dict: Dict[char:int], occurence of ascii character
+    :returns: Dict[char:str], the translator dictionary ascii to binary
     """
     result = {}
     while len(occ_dict) > 1:
@@ -116,10 +116,10 @@ def create_translator(occ_dict):
 
 
 def create_compressed_file(text, translator, compressed_filename="my_file.bin"):
-    """Create the compressed file (filename.bin).
+    """Create and write the compressed file.
 
     :text: str, ascii string to compress
-    :translator: dict, the translator dictionary
+    :translator: Dict[char:str], the translator dictionary
     :compressed_filename: str, compressed file name
     """
     with open(compressed_filename, 'w') as f:
