@@ -3,8 +3,8 @@
 
 import sys
 
-from compress import compress
-from decompress import decompress
+from src.compress import compress
+from src.decompress import decompress
 
 
 def display_doc(*args):

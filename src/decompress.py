@@ -3,7 +3,7 @@
 
 from ast import literal_eval
 
-from compress import get_file_content
+from .compress import get_file_content
 
 
 def decompress(filename):
@@ -56,7 +56,7 @@ def reverse_dict(dictionary):
     return {dictionary[key]: key for key in dictionary}
 
 
-def traduce_file(text, translator, decompressed_filename="my_decompressed_file.txt"):
+def traduce_file(text, translator, decompressed_filename="./files/my_decompressed_file.txt"):
     """Create and write the decompressed file.
 
     :text: str, 0/1 string to decompress

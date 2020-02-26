@@ -115,14 +115,17 @@ def create_translator(occ_dict):
     return result
 
 
-def create_compressed_file(text, translator, compressed_filename="my_file.bin"):
+def create_compressed_file(text, translator, compressed_filename="./files/my_file.bin"):
     """Create and write the compressed file.
 
     :text: str, ascii string to compress
     :translator: Dict[char:str], the translator dictionary
     :compressed_filename: str, compressed file name
     """
-    with open(compressed_filename, 'w') as f:
-        f.write(str(translator) + "\n")  # send the translator for decompression
-        for c in text:
-            f.write(translator.get(c))
+    try:
+        with open(compressed_filename, 'w') as f:
+            f.write(str(translator) + "\n")  # send the translator for decompression
+            for c in text:
+                f.write(translator.get(c))
+    except FileNotFoundError:
+        print("File or directory '%s' not found." % compressed_filename)
